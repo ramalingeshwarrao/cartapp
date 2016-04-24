@@ -15,6 +15,7 @@
 				
 				$scope.productSel = function (item) {
 				etalage.addEtalageImages(item.pVImages);
+				etalage.addProductId(item.pid);
 				$location.path( '/pview' );
 				
 				};

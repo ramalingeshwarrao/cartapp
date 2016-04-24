@@ -10,6 +10,25 @@
 			function($scope, $http, etalage, $timeout) {
 				
 				$scope.productImages = etalage.getEtalageImages();
+				$scope.productId = etalage.getProductId();
+				
+				$scope.productViewDetails = function() {
+					$http (
+						 {
+							 method :  'GET',
+							 url : $CART.cartRest + '/pview?pid='+$scope.productId,
+							 headers : {
+									'Content-Type' : 'application/json'
+								}
+						 }).success(function(data) {
+							 $scope.productList = data;
+							 $scope.summary = data.summary.split(',');
+						 }).error(function(data, status, headers, config) {
+							$scope.loading = false;
+							BootstrapDialog.alert("Fail to get cat details, contact administrator for support");
+						 });
+				};
+				$scope.productViewDetails();
 				
 				$timeout(function() {
 					$('#etalage').etalage({

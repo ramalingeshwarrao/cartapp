@@ -18,7 +18,16 @@
 		MainModule.factory('etalage', function() {
 			
 			var etalageImages = [];
+			var productId = "";
 			var etalageService = {};
+			
+			etalageService.addProductId = function(pid) {
+				productId = pid;
+			};
+			
+			etalageService.getProductId = function() {
+				return productId;
+			};
 			
 			etalageService.addEtalageImages = function(images) {
 				etalageImages = images;

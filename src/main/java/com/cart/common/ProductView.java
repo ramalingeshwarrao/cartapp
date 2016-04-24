@@ -13,6 +13,23 @@ public class ProductView {
 	private String brand;
 	private String details;
 	private String summary;
+	private String productName;
+	private String productPrice;
+	
+	@XmlElement(name = "pp")
+	public String getProductPrice() {
+		return productPrice;
+	}
+	public void setProductPrice(String productPrice) {
+		this.productPrice = productPrice;
+	}
+	@XmlElement(name = "pname")
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 	
 	@XmlElement(name = "pid")
 	public String getProductId() {

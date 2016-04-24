@@ -556,7 +556,7 @@
 					<a ng-click='productSel(product)'><div class="product-grid love-grid">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="{{product.imgPath}}" class="img-responsive"></img>
+							<img src="images/{{product.imgPath}}" class="img-responsive"></img>
 							<div class="b-wrapper">
 							<h4 class="b-animate b-from-left  b-delay03">							
 							<button class="btns"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Quick View</button>
@@ -567,7 +567,7 @@
 							<div class="product-info-cust">
 								<h4>{{product.pn}}</h4>
 								<p>{{product.pid}}</p>
-								<span class="item_price">$187.95</span>
+								<span class="item_price">Rs: {{product.pp}}</span>
 								<input type="text" class="item_quantity" value="1" />
 								<input type="button" class="item_add items" value="ADD">	
 							</div>													
