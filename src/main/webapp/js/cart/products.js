@@ -16,7 +16,8 @@
 				$scope.productSel = function (item) {
 				etalage.addEtalageImages(item.pVImages);
 				etalage.addProductId(item.pid);
-				$location.path( '/pview' );
+				var uri = encodeURI('pid='+item.pid+'&im='+item.pVImages);
+				$location.url( '/pview?'+uri );
 				
 				};
 				
@@ -36,21 +37,6 @@
 						 });
 				};
 				$scope.catdetails();
-				
-				$timeout(function() {
-					$(".tab0 .single-bottom").hide();
-					$(".tab1 .single-bottom").hide();
-					
-					$(".tab1 ul").click(function(){
-						$(".tab1 .single-bottom").slideToggle(300);
-					});
-					$(".tab0 ul").click(function(){
-						$(".tab0 .single-bottom").slideToggle(300);
-					});
-				}, 100);
-				
-				
-				
 				
 			} ];
 }

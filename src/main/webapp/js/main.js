@@ -20,6 +20,54 @@
 			var etalageImages = [];
 			var productId = "";
 			var etalageService = {};
+			var cartIds = [];
+			var cartList = [];
+			var totalItems = "";
+			var totalCost = "";
+			
+			etalageService.getTotalItems = function() {
+				return totalItems;
+			};
+			
+			etalageService.addTotalItems = function(totalItem) {
+				totalItems = totalItem;
+			};
+			
+			etalageService.getTotalCost = function() {
+				return totalCost;
+			};
+			
+			etalageService.setTotalCost = function(totalCst) {
+				totalCost = totalCst;
+			};
+			
+			etalageService.removeCartList = function() {
+				cartList = [];
+			};
+			
+			etalageService.removeCartIds = function() {
+				cartIds = [];
+			};
+			
+			etalageService.addCartList = function(list) {
+				cartList.push(list);
+			};
+			
+			etalageService.getCartList = function() {
+				return cartList;
+			};
+			
+			etalageService.assignCartList = function(list) {
+				cartList = list;
+			};
+			
+			etalageService.getCartIds = function() {
+				return cartIds;
+			};
+			
+			etalageService.addCartIds = function(ids) {
+				cartIds = ids;
+			};
 			
 			etalageService.addProductId = function(pid) {
 				productId = pid;
@@ -111,6 +159,10 @@
 		.when('/test', {
 			templateUrl : './html/test.html',
 			controller : $CART.HomeController
+		})
+		.when('/cart', {
+			templateUrl : './html/cart.html',
+			controller : $CART.CartController
 		})
 		.otherwise({
 			redirectTo : '/products'

@@ -39,10 +39,10 @@
 				 <a href="login.html">LOGIN</a>
 			 </div>
 			 <div class="cart box_1">
-				<a href="cart.html">
+				<a href="#cart">
 					<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
 				</a>	
-				<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
+				<p><a href="javascript:;" class="simpleCart_empty" ng-click="emptyCart()">Empty cart</a></p>
 				<div class="clearfix"> </div>
 			 </div>				 
 		 </div>
@@ -544,7 +544,8 @@
 	 <div class="container">
 		 <ol class="breadcrumb">
 			 <li><a href="index.html">Home</a></li>
-			 <li class="active">Products</li>
+			 <li><a href="#products">Products</a></li>
+			 <li class="active">Products View</li>
 		 </ol>
 		 <!-- start content -->	
 			<div class="col-md-9 det">
@@ -566,6 +567,7 @@
 							 <ul>
 								 <li>Sellling Price:</li>
 								 <li class="active">Rs {{productList.pp}}</li>
+								 <button class="btn btn-info" ng-click="addToCart()" ng-disabled="isCartIdAvail"> Add To Cart</button><Br>
 								 <a href="#">BUY NOW</a>
 							 </ul>
 						 </div>

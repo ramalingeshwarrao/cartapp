@@ -12,6 +12,8 @@
 <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 <link rel="stylesheet" href="css/etalage.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
 
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
@@ -34,6 +36,9 @@
 <script type="text/javascript" src="js/cart/products.js"></script>
 <script type="text/javascript" src="js/cart/product-view.js"></script>
 <script type="text/javascript" src="js/jquery.etalage.min.js"></script>
+<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" src="js/cart/cart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
 
 </head>
 <body data-ng-app="CartModule">

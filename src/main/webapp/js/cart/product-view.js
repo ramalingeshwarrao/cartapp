@@ -7,10 +7,37 @@
 			'$http',
 			'etalage',
 			'$timeout',
-			function($scope, $http, etalage, $timeout) {
+			'$location',
+			function($scope, $http, etalage, $timeout, $location) {
 				
-				$scope.productImages = etalage.getEtalageImages();
-				$scope.productId = etalage.getProductId();
+				var paramValues = $location.search(); 
+				var images = paramValues.im
+				$scope.productImages = images.split(",");
+				$scope.isCartIdAvail = false;
+				$scope.productId = paramValues.pid;
+				$scope.cartids = etalage.getCartIds();
+				$scope.cartList = etalage.getCartList();
+				for (var i=0; i < $scope.cartids.length; i++) {
+					var id = $scope.cartids[i];
+					if (id == $scope.productId) {
+						$scope.isCartIdAvail = true;
+						break;
+					}
+				}
+				
+				$scope.addToCart = function() {
+					$scope.cartids.push($scope.productId);
+					etalage.addCartIds($scope.cartids);
+					etalage.addCartList($scope.productList);
+					$scope.isCartIdAvail = true;
+				};
+				
+				$scope.emptyCart = function() {
+					$scope.cartids = {};
+					etalage.addCartIds({});
+					etalage.removeCartList();
+					$scope.isCartIdAvail = false;
+				};
 				
 				$scope.productViewDetails = function() {
 					$http (
