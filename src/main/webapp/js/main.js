@@ -22,23 +22,26 @@
 			var etalageService = {};
 			var cartIds = [];
 			var cartList = [];
-			var totalItems = "";
-			var totalCost = "";
 			
-			etalageService.getTotalItems = function() {
-				return totalItems;
+			etalageService.emptyCart = function() {
+				cartList = [];
+				cartIds = [];
 			};
 			
-			etalageService.addTotalItems = function(totalItem) {
-				totalItems = totalItem;
+			function price() {
+				var cost = 0;
+				for (var i =0 ; i < cartList.length; i++) {
+					cost = cost + parseInt(cartList[i].pp);
+				}
+				return cost;
+			};
+			
+			etalageService.getTotalItems = function() {
+				return cartList.length;
 			};
 			
 			etalageService.getTotalCost = function() {
-				return totalCost;
-			};
-			
-			etalageService.setTotalCost = function(totalCst) {
-				totalCost = totalCst;
+				return price();
 			};
 			
 			etalageService.removeCartList = function() {

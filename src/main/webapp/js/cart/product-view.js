@@ -10,8 +10,10 @@
 			'$location',
 			function($scope, $http, etalage, $timeout, $location) {
 				
+				$scope.cartTotalCost = etalage.getTotalCost();
+				$scope.carttotalItems = etalage.getTotalItems();
 				var paramValues = $location.search(); 
-				var images = paramValues.im
+				var images = paramValues.im;
 				$scope.productImages = images.split(",");
 				$scope.isCartIdAvail = false;
 				$scope.productId = paramValues.pid;
@@ -25,19 +27,23 @@
 					}
 				}
 				
+				
 				$scope.addToCart = function() {
 					$scope.cartids.push($scope.productId);
 					etalage.addCartIds($scope.cartids);
 					etalage.addCartList($scope.productList);
+					$scope.cartTotalCost = etalage.getTotalCost();
+					$scope.carttotalItems = etalage.getTotalItems();
 					$scope.isCartIdAvail = true;
 				};
 				
 				$scope.emptyCart = function() {
-					$scope.cartids = {};
-					etalage.addCartIds({});
-					etalage.removeCartList();
-					$scope.isCartIdAvail = false;
+					etalage.emptyCart();
+					$scope.cartTotalCost = etalage.getTotalCost();
+					$scope.carttotalItems = etalage.getTotalItems();
 				};
+				
+				
 				
 				$scope.productViewDetails = function() {
 					$http (

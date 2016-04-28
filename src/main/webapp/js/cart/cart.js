@@ -18,8 +18,8 @@
 				$scope.cartList = etalage.getCartList();
 				$scope.cartListLength = $scope.cartList.length;
 				cartAmount($scope.cartList, $scope.cartListLength);
-				etalage.setTotalCost($scope.productPrice);
-				etalage.addTotalItems($scope.cartListLength);
+				$scope.cartTotalCost = etalage.getTotalCost();
+				$scope.carttotalItems = etalage.getTotalItems();
 				
 				function cartAmount(items, length) {
 					$scope.totalPrice = price(items);
@@ -33,6 +33,16 @@
 						cost = cost + parseInt(items[i].pp);
 					}
 					return cost;
+				};
+				
+				$scope.emptyCart = function() {
+					etalage.emptyCart();
+					$scope.cartTotalCost = etalage.getTotalCost();
+					$scope.carttotalItems = etalage.getTotalItems();
+					
+					$scope.cartList = etalage.getCartList();
+					$scope.cartListLength = $scope.cartList.length;
+					cartAmount($scope.cartList, $scope.cartListLength);
 				};
 				
 				$scope.removeCartItem = function(item) {
