@@ -27,23 +27,6 @@
 					$scope.carttotalItems = etalage.getTotalItems();
 				};
 				
-				$scope.catdetails = function() {
-					$http (
-						 {
-							 method :  'GET',
-							 url : $CART.cartRest + '/clist',
-							 headers : {
-									'Content-Type' : 'application/json'
-								}
-						 }).success(function(data) {
-							 $scope.catList = data.catView;
-						 }).error(function(data, status, headers, config) {
-							$scope.loading = false;
-							BootstrapDialog.alert("Fail to get cat details, contact administrator for support");
-						 });
-				};
-				$scope.catdetails();
-				
 			} ];
 }
 

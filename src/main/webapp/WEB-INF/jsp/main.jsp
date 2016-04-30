@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 <link rel="stylesheet" href="css/etalage.css">
 <link rel="stylesheet" href="css/cart.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
 
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
@@ -29,8 +28,10 @@
 
 <script src="js/simpleCart.min.js"> </script>
 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="js/angular-route.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
 <script type="text/javascript" src="js/ng-infinite-scroll.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/cart/products.js"></script>
@@ -38,7 +39,15 @@
 <script type="text/javascript" src="js/jquery.etalage.min.js"></script>
 <script type="text/javascript" src="js/responsiveslides.min.js"></script>
 <script type="text/javascript" src="js/cart/cart.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
+<script type="text/javascript" src="js/angular-material.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+
+<link rel="stylesheet" href="css/angular-material.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
+
 
 </head>
 <body data-ng-app="CartModule">

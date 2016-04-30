@@ -12,7 +12,7 @@
 	var MainModule;
 
 	$CART.cartRest = "/cartapp/cart/cres";
-	MainModule = angular.module('CartModule', [ 'ngRoute', 'infinite-scroll' ]);
+	MainModule = angular.module('CartModule', [ 'ngRoute', 'ui.bootstrap', 'ngMaterial', 'infinite-scroll' ]);
 	
 
 		MainModule.factory('etalage', function() {
@@ -97,6 +97,7 @@
 			this.items = [];
 			this.busy = false;
 			this.after = '';
+			this.loading = true;
 		};
 		Reddit.prototype.nextPage = function() {
 			if (this.busy)
@@ -109,6 +110,7 @@
 			        this.items.push(items[i]);
 			      }
 			      //this.after = "t3_" + this.items[this.items.length - 1].id;
+			      this.loading = false;
 			      this.busy = true;
 			      //this.busy = false;
 			    }.bind(this));

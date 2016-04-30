@@ -549,7 +549,7 @@
 		 </ol>
 			<h2>OUR PRODUCTS</h2>			
 		 <div class="col-md-9 product-model-sec">
-		 
+		 <img src="images/loading.gif" ng-show="reddit.loading" style="position: relative;" />
 		 <div infinite-scroll='reddit.nextPage()' infinite-scroll-distance='1' infinite-scroll-disabled='reddit.busy'>
 		 <div ng-repeat="product in reddit.items">
 		 

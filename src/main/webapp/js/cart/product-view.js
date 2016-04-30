@@ -9,7 +9,7 @@
 			'$timeout',
 			'$location',
 			function($scope, $http, etalage, $timeout, $location) {
-				
+				$scope.loading = true;
 				$scope.cartTotalCost = etalage.getTotalCost();
 				$scope.carttotalItems = etalage.getTotalItems();
 				var paramValues = $location.search(); 
@@ -41,6 +41,7 @@
 					etalage.emptyCart();
 					$scope.cartTotalCost = etalage.getTotalCost();
 					$scope.carttotalItems = etalage.getTotalItems();
+					$scope.isCartIdAvail = false;
 				};
 				
 				
@@ -75,6 +76,10 @@
 						}
 					});
 				}, 3000);
+				
+				$timeout(function() {
+					$scope.loading = false;
+				}, 2999);
 					
 
 				

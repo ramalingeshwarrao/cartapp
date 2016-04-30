@@ -70,6 +70,9 @@
 							break;
 						}
 					}
+					
+					$scope.cartTotalCost = etalage.getTotalCost();
+					$scope.carttotalItems = etalage.getTotalItems();
 				};
 			} ];
 }
