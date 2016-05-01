@@ -10,10 +10,13 @@
 			'$location',
 			'$timeout',
 			function($scope, $http, Reddit, etalage, $location, $timeout) {
+				
+			    $scope.template = etalage.getIncludeFile()[0];
 				$scope.reddit = new Reddit();
 				$scope.red = $scope.reddit;
 				$scope.cartTotalCost = etalage.getTotalCost();
 				$scope.carttotalItems = etalage.getTotalItems();
+				
 				$scope.productSel = function (item) {
 				etalage.addEtalageImages(item.pVImages);
 				etalage.addProductId(item.pid);
@@ -26,6 +29,8 @@
 					$scope.cartTotalCost = etalage.getTotalCost();
 					$scope.carttotalItems = etalage.getTotalItems();
 				};
+				
+				
 				
 			} ];
 }

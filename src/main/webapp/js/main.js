@@ -22,6 +22,14 @@
 			var etalageService = {};
 			var cartIds = [];
 			var cartList = [];
+			var includeTemplates = [{
+		        name: 'menu template',
+		        url: './html/menu.html'}
+		    ];
+			
+			etalageService.getIncludeFile = function() {
+				return includeTemplates;
+			};
 			
 			etalageService.emptyCart = function() {
 				cartList = [];
@@ -120,6 +128,19 @@
 
 		return Reddit;
 	});
+
+	//directive for mega menu
+		MainModule.directive('cartmenu', ['$timeout', function($timeout) {
+			return {
+				restrict: 'A',
+				link : function(scope, ele, attrs) {
+					var $menuObj = $(ele);
+					$timeout(function() {
+						$menuObj.ready(function(){$(".megamenu").megamenu();});
+					}, 10);
+				}
+			};
+		}]);
 		
 	//directive for jquery etalage
 		MainModule.directive('etalagedirective', ['$timeout', function($timeout) {
@@ -167,6 +188,10 @@
 		})
 		.when('/cart', {
 			templateUrl : './html/cart.html',
+			controller : $CART.CartController
+		})
+		.when('/menu', {
+			templateUrl : './html/menu.html',
 			controller : $CART.CartController
 		})
 		.otherwise({

@@ -10,3 +10,18 @@
   -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
+
+.guarantee span strong {
+	display: block;
+	text-transform: uppercase;
+}
+
+.guarantee div {
+	margin-bottom: 10px;
+	border: 1px solid #f2f2f2;
+	background-color: #fff;
+	padding: 12px;
+}
+.guarantee-details div{
+	line-height: 18px;
+}

@@ -13,8 +13,7 @@
 			'$timeout',
 			function($scope, $http, Reddit, etalage, $location, $timeout) {
 				
-				
-				
+				$scope.template = etalage.getIncludeFile()[0];
 				$scope.cartList = etalage.getCartList();
 				$scope.cartListLength = $scope.cartList.length;
 				cartAmount($scope.cartList, $scope.cartListLength);

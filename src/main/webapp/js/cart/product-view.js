@@ -9,6 +9,8 @@
 			'$timeout',
 			'$location',
 			function($scope, $http, etalage, $timeout, $location) {
+				
+				$scope.template = etalage.getIncludeFile()[0];
 				$scope.loading = true;
 				$scope.cartTotalCost = etalage.getTotalCost();
 				$scope.carttotalItems = etalage.getTotalItems();
@@ -79,7 +81,7 @@
 				
 				$timeout(function() {
 					$scope.loading = false;
-				}, 2999);
+				}, 3000);
 					
 
 				
