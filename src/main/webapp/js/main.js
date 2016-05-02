@@ -39,7 +39,12 @@
 			function price() {
 				var cost = 0;
 				for (var i =0 ; i < cartList.length; i++) {
-					cost = cost + parseInt(cartList[i].pp);
+					if (cartList[i].quantity == undefined) {
+						cost = cost + parseInt(cartList[i].pp);
+						cartList[i].quantity = 1;
+					} else {
+						cost = cost + parseInt(cartList[i].pp) * parseInt(cartList[i].quantity);	
+					}
 				}
 				return cost;
 			};

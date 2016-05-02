@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<a href="#cart">
 					<h3> <span >Rs {{cartTotalCost}}</span> (<span>{{carttotalItems}}</span> items)<img src="images/bag.png" alt=""></h3>
 				</a>	
-				<p><a ng-click="emptyCart()" >Empty cart</a></p>
+				<p><a ng-click="emptyCart()" style="cursor: pointer;">Empty cart</a></p>
 				<div class="clearfix"> </div>
 			 </div>				 
 		 </div>
@@ -94,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							 <h3>{{list.pname}}<span>{{list.pid}}</span></h3>
 							 <h4><span>Rs.</span>{{list.pp}}</h4>
 							 <p class="qty">Qty ::</p>
-							 <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+							 <input type="number" ng-model="list.quantity" name="list.quantity" class="form-control input-small" ng-change='itemChange(list)'>
 					   </div>
 					   <div class="clearfix"></div>
 						<div class="delivery">

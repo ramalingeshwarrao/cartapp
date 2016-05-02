@@ -29,9 +29,23 @@
 				function price(items) {
 					var cost = 0;
 					for (var i =0 ; i < items.length; i++) {
-						cost = cost + parseInt(items[i].pp);
+						if (items[i].quantity == undefined) {
+							cost = cost + parseInt(items[i].pp);
+							items[i].quantity = 1;
+						} else {
+							cost = cost + parseInt(items[i].pp) * parseInt(items[i].quantity);							
+						}
 					}
 					return cost;
+				};
+				
+				$scope.itemChange = function(itemObj) {
+					var itemObjArray = [];
+					itemObjArray.push(itemObj);
+					price(itemObjArray);
+					$scope.cartTotalCost = etalage.getTotalCost();
+					$scope.carttotalItems = etalage.getTotalItems();
+					cartAmount($scope.cartList, $scope.cartListLength);
 				};
 				
 				$scope.emptyCart = function() {
