@@ -87,6 +87,7 @@ public class CartDAOImpl extends BaseDAO implements CartDAO {
 							productView.setBrand(rs.getString("brand"));
 							productView.setDetails(rs.getString("details"));
 							productView.setSummary(rs.getString("summary"));
+							productView.setSizes(rs.getString("sizes"));
 							return productView;
 						}
 					});

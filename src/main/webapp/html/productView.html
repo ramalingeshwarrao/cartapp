@@ -106,6 +106,14 @@
 							 <li>Brand: {{productList.brand}}</li>
 						 </ul>
 					  </div>
+					  <div class="product-sizes" ng-show="isSizesVisible">
+					  	<div class="single-bottom1">
+						<h6>Select Size</h6>
+					   	</div>
+					   	<div class="product-sizes-values" >
+					  	 <span ng-class="{selected: isSizeSelectValue == size}" ng-repeat="size in sizes" ng-click='selSize(size)'>{{size}}</span>
+					    </div>
+					  </div>
 					  <div class="single-bottom1">
 						<h6>Details</h6>
 						<p class="prod-desc">{{productList.details}}.</p>

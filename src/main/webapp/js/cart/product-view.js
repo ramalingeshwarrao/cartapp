@@ -46,7 +46,10 @@
 					$scope.isCartIdAvail = false;
 				};
 				
-				
+				$scope.isSizeSelectValue = "";
+				$scope.selSize = function(size) {
+					$scope.isSizeSelectValue = size; 
+				};
 				
 				$scope.productViewDetails = function() {
 					$http (
@@ -59,6 +62,12 @@
 						 }).success(function(data) {
 							 $scope.productList = data;
 							 $scope.summary = data.summary.split(',');
+							 if (data.sizes != null && data.sizes != "" && data.sizes != undefined && data.sizes != 'null') {
+								 $scope.sizes = data.sizes.split(',');
+								 $scope.isSizesVisible = true;
+							 } else {
+								 $scope.isSizesVisible = false;
+							 }
 						 }).error(function(data, status, headers, config) {
 							$scope.loading = false;
 							BootstrapDialog.alert("Fail to get cat details, contact administrator for support");

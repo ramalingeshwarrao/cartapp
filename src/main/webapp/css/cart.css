@@ -25,3 +25,28 @@
 .guarantee-details div{
 	line-height: 18px;
 }
+
+.product-sizes div {
+	margin-bottom: 10px;
+}
+
+.product-sizes-name div{
+	margin-top: 5px;
+	margin-botton: 5px;
+}
+
+.product-sizes-values span{
+	border: 1px solid;
+	padding: 6px 9px;
+	display: inline-block;
+	font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.product-sizes-values span.selected {
+	border: 1px solid #08c;
+    background-color: #08c;
+    color: #fff;
+}

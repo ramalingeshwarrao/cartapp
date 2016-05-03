@@ -15,6 +15,15 @@ public class ProductView {
 	private String summary;
 	private String productName;
 	private String productPrice;
+	private String sizes;
+	
+	@XmlElement(name = "sizes")
+	public String getSizes() {
+		return sizes;
+	}
+	public void setSizes(String sizes) {
+		this.sizes = sizes;
+	}
 	
 	@XmlElement(name = "pp")
 	public String getProductPrice() {
