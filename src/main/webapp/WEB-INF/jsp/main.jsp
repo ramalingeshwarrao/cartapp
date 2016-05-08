@@ -5,9 +5,9 @@
 
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Montserrat|Raleway:400,200,300,500,600,700,800,900,100' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+<link href="css/fonts-gapis-com1.css" rel='stylesheet' type='text/css'>
+<link href="css/fonts-gapis-com2.css" rel='stylesheet' type='text/css'>
+<link href="font-gapis-com-aladin.css" rel='stylesheet' type='text/css'>
 <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -29,9 +29,9 @@
 <script src="js/simpleCart.min.js"> </script>
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/angular-route.min.js"></script>
-<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
 <script type="text/javascript" src="js/ng-infinite-scroll.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/cart/products.js"></script>
@@ -40,13 +40,13 @@
 <script type="text/javascript" src="js/responsiveslides.min.js"></script>
 <script type="text/javascript" src="js/cart/cart.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-aria.min.js"></script>
 <script type="text/javascript" src="js/angular-material.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+<script src="js/bootstrap-dialog.min.js"></script>
 
 <link rel="stylesheet" href="css/angular-material.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
+<link rel="stylesheet" href="css/bootstrap-dialog.min.css">
 
 
 </head>
