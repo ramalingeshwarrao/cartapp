@@ -26,4 +26,9 @@ public class CartServiceImpl implements CartService{
 		return cartDAO.getProductView(productId);
 	}
 
+	@Override
+	public Products getProductById(String productId) {
+		return cartDAO.getProductById(productId);
+	}
+
 }

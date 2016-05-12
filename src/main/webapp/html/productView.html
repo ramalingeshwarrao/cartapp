@@ -75,15 +75,15 @@
 						 <div class="clearfix"></div>		
 				  </div>
 				  <div class="single-right">
-					 <h3>{{productList.pname}}</h3>
-					 <div class="id"><h4>{{productList.pid}}</h4></div>
+					 <h3>{{productItem.pname}}</h3>
+					 <div class="id"><h4>{{productItem.pid}}</h4></div>
 					  
 					  <div class="cost">
 						 <div class="prdt-cost">
 							 <ul>
 								 <li>Sellling Price:</li>
-								 <li class="active">Rs {{productList.pp}}</li>
-								 <button class="btn btn-info" ng-click="addToCart()" ng-disabled="isCartIdAvail"> Add To Cart</button><Br>
+								 <li class="active">Rs {{productItem.pp}}</li>
+								 <button class="btn btn-info" ng-click="addToCart()" > Add To Cart</button><Br>
 								 <a href="#">BUY NOW</a>
 							 </ul>
 						 </div>
@@ -100,11 +100,15 @@
 					  </div>
 					  <div class="item-list">
 						 <ul>
-							 <li>Material: {{productList.material}}</li>
-							 <li>Color: {{productList.color}}</li>
-							 <li>Style: {{productList.style}}</li>
-							 <li>Brand: {{productList.brand}}</li>
+							 <li>Material: {{productItem.material}}</li>
+							 <li>Color: {{productItem.color}}</li>
+							 <li>Style: {{productItem.style}}</li>
+							 <li>Brand: {{productItem.brand}}</li>
 						 </ul>
+					  </div>
+					  <div class="product-view-quantity-div">
+					  <p class="product-view-quantity">Qty : </p>
+					  <input type="number" ng-model="quantity" name="quantity" class="product-view-quantity form-control input-small" ng-change='itemChange(list)'>
 					  </div>
 					  <div class="product-sizes" ng-show="isSizesVisible">
 					  	<div class="single-bottom1">
@@ -116,12 +120,12 @@
 					  </div>
 					  <div class="single-bottom1">
 						<h6>Details</h6>
-						<p class="prod-desc">{{productList.details}}.</p>
+						<p class="prod-desc">{{productItem.details}}.</p>
 					 </div>					 
 				  </div>
 				  <div class="clearfix"></div>
 				  <div class="sofaset-info">
-						 <h4>Product Summary {{productList.pname}}</h4>
+						 <h4>Product Summary {{productItem.pname}}</h4>
 						 <ul>
 							 <li ng-repeat="summary in summary">{{summary}}</li>
 						 </ul>

@@ -101,4 +101,50 @@ public class CartDAOImpl extends BaseDAO implements CartDAO {
 		return null;
 	}
 
+	@Override
+	public Products getProductById(String productId) {
+
+		try {
+			List<Products> productList = this.jdbcTemplate.query(
+					SqlQuery.GET_PRODUCTS_BY_ID, new Object[] {productId},
+					new RowMapper<Products>() {
+						@Override
+						public Products mapRow(ResultSet rs, int rowNum)
+								throws SQLException {
+							Products products = new Products();
+							List<String> productImgs = new ArrayList<String>();
+							String productId = rs.getString("productid");
+							products.setImgPath(productId+".jpg");
+							String productName = rs.getString("productname");
+							int productNameLen = productName.length();
+							if (productNameLen > Common.PRODUCT_NAME_SIZE) {
+								productName = productName.substring(0, 17)+" ...";
+							}
+							products.setProductsName(productName);
+							products.setProductId(productId);
+							products.setProductPrice(rs
+									.getString("productprice"));
+							String img = rs.getString("productviewimg1");
+							if (StringUtils.isNotBlank(img))
+								productImgs.add(img);
+							img = rs.getString("productviewimg2");
+							if (StringUtils.isNotBlank(img))
+								productImgs.add(img);
+							img = rs.getString("productviewimg3");
+							if (StringUtils.isNotBlank(img))
+								productImgs.add(img);
+							products.setProductViewImages(productImgs);
+							return products;
+						}
+					});
+			if (productList != null && productList.size() > 0) {
+				return productList.get(0);
+			}
+		} catch (Exception e) {
+			LOG.error("Fail to getproduct details by product id", e);
+			return null;
+		}
+		return null;
+	}
+
 }

@@ -20,7 +20,7 @@
 				$scope.productSel = function (item) {
 				etalage.addEtalageImages(item.pVImages);
 				etalage.addProductId(item.pid);
-				var uri = encodeURI('pid='+item.pid+'&im='+item.pVImages);
+				var uri = encodeURI('pid='+item.pid+'&im='+item.pVImages+'&s=p');
 				$location.url( '/pview?'+uri );
 				};
 				

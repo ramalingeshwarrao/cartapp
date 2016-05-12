@@ -34,6 +34,14 @@ public class CartResource {
 	}
 	
 	@GET
+	@Path("pbid")
+	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Products getProductsList(@QueryParam("pid") String productId) {
+		return cartService.getProductById(productId);
+	}
+	
+	@GET
 	@Path("plist")
 	@Consumes({ MediaType.APPLICATION_FORM_URLENCODED })
 	@Produces({ MediaType.APPLICATION_JSON })

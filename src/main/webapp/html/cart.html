@@ -84,7 +84,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 </ol>			
 		 <div class="cart-items" >
 			 <h2>My Shopping Bag ({{cartListLength}})</h2>
-			 <div class="cart-header" ng-repeat="list in cartList">
+			 <div class="cart-header" ng-repeat="list in cartList track by $index">
+			 <a ng-click="goToTheItem(list)" style="cursor:pointer;">
 				 <img src="./images/close.png" ng-click="removeCartItem(list)" class="cartclose" />
 				 <div class="cart-sec">
 						<div class="cart-item cyc">
@@ -93,13 +94,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					   <div class="cart-item-info">
 							 <h3>{{list.pname}}<span>{{list.pid}}</span></h3>
 							 <h4><span>Rs.</span>{{list.pp}}</h4>
-							 <p class="qty">Qty ::</p>
-							 <input type="number" ng-model="list.quantity" name="list.quantity" class="form-control input-small" ng-change='itemChange(list)'>
+							 <p class="qty">Qty :: {{list.quantity}}</p>
+							 <p class="qty" ui-fi='list.selectSize != undefined '>Selected Size :: {{list.selectSize}}</p>
 					   </div>
 					   <div class="clearfix"></div>
 						<div class="delivery">
 							 <p>Service Charges:: Rs.50.00</p>							 
-				        </div>						
+				        </div>		
+				        </a>				
 				  </div>
 			 </div>
 				

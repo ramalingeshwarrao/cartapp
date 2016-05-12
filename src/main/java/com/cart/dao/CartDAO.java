@@ -11,6 +11,7 @@ import com.cart.common.Products;
 public interface CartDAO {
 
 	public List<Products> getProducts();
+	public Products getProductById(String productId);
 	public ProductView getProductView(String productId);
 	
 }

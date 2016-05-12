@@ -2,3 +2,6 @@
 create table Products (productname varchar(100), productid varchar(50), productprice float, productviewimg1 varchar(100), productviewimg2 varchar(100),  productviewimg3 varchar(100));
 
 create table ProductView (productid varchar(50), material varchar(50), color varchar(20), style varchar(50), brand varchar(50), details varchar(1000), summary varchar(5000));
+
+
+-- alter table productview add sizes varchar(200);

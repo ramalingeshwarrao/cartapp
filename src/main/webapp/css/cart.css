@@ -50,3 +50,12 @@
     background-color: #08c;
     color: #fff;
 }
+
+.product-view-quantity-div {
+	display:inline-block;
+	margin-top: 10px;
+}
+
+.product-view-quantity  {
+	display:inline-block;
+}

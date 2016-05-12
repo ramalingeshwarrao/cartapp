@@ -39,14 +39,14 @@
 					return cost;
 				};
 				
-				$scope.itemChange = function(itemObj) {
-					var itemObjArray = [];
-					itemObjArray.push(itemObj);
-					price(itemObjArray);
-					$scope.cartTotalCost = etalage.getTotalCost();
-					$scope.carttotalItems = etalage.getTotalItems();
-					cartAmount($scope.cartList, $scope.cartListLength);
-				};
+//				$scope.itemChange = function(itemObj) {
+//					var itemObjArray = [];
+//					itemObjArray.push(itemObj);
+//					price(itemObjArray);
+//					$scope.cartTotalCost = etalage.getTotalCost();
+//					$scope.carttotalItems = etalage.getTotalItems();
+//					cartAmount($scope.cartList, $scope.cartListLength);
+//				};
 				
 				$scope.emptyCart = function() {
 					etalage.emptyCart();
@@ -56,6 +56,34 @@
 					$scope.cartList = etalage.getCartList();
 					$scope.cartListLength = $scope.cartList.length;
 					cartAmount($scope.cartList, $scope.cartListLength);
+				};
+				
+				$scope.goToTheItem = function(productItem) {
+					var pid = productItem.pid;
+				$http (
+						 {
+							 method :  'GET',
+							 url : $CART.cartRest + '/pbid?pid='+pid,
+							 headers : {
+									'Content-Type' : 'application/json'
+								}
+						 }).success(function(data) {
+							 if (data == null || data == "") {
+								 BootstrapDialog.alert("Fail to get cat details, contact administrator for support");
+								 $location.url( '/products' );
+							 }
+							 var uri = "";
+							 if (productItem.selectSize == undefined) {
+								 uri = encodeURI('pid='+data.pid+'&im='+data.pVImages+'&s=c&qty='+productItem.quantity);	 
+							 } else {
+								 uri = encodeURI('pid='+data.pid+'&im='+data.pVImages+'&s=c&qty='+productItem.quantity+'&selectionsize='+productItem.selectSize);
+							 }
+							 
+							  $location.url( '/pview?'+uri );
+						 }).error(function(data, status, headers, config) {
+							$scope.loading = false;
+							BootstrapDialog.alert("Fail to get cat details, contact administrator for support");
+						 });
 				};
 				
 				$scope.removeCartItem = function(item) {
