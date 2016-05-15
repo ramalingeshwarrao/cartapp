@@ -31,6 +31,17 @@
 				return includeTemplates;
 			};
 			
+			etalageService.getnerateHash = function(strToHash) {
+				var hash =0, i, char;
+				if (strToHash.length == 0) return hash;
+				for (i =0; i < strToHash.length; i++) {
+					char = strToHash.charCodeAt(i);
+			        hash = ((hash<<5)-hash)+char;
+			        hash = hash & hash; // Convert to 32bit integer
+			    }
+			    return hash;
+			};
+			
 			etalageService.emptyCart = function() {
 				cartList = [];
 				cartIds = [];

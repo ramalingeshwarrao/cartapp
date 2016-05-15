@@ -84,7 +84,9 @@
 	                            			   if ( $scope.productList[i].pid == $scope.productId && $scope.isSizesVisible && ($scope.productList[i].selectSize == undefined || isProductAvailInList) ) {
 	                            				   var addProduct = angular.copy($scope.productList[i]);
 	                            				   addProduct.selectSize = $scope.isSizeSelectValue;
+	                            				   var hashcode = etalage.getnerateHash(addProduct.pid.concat(addProduct.selectSize));
 	                            				   addProduct.quantity = $scope.quantity;
+	                            				   addProduct.hash = hashcode;
 	                            				   etalage.addCartList(addProduct);
 	                            				   break;
 	                            			   } 
@@ -93,6 +95,8 @@
 	                            				   break;
 	                            			   } else if ($scope.productList[i].pid == $scope.productId && $scope.productList[i].quantity == undefined && !$scope.isSizesVisible) {
 	                            				   $scope.productList[i].quantity = $scope.quantity;
+	                            				   var hashcode = etalage.getnerateHash($scope.productList[i].pid);
+	                            				   $scope.productList[i].hash = hashcode;
 	                            				   etalage.addCartList($scope.productList[i]);
 	                            				   break;
 	                            			   } else if ($scope.productList[i].pid == $scope.productId && !$scope.isSizesVisible ) {
@@ -112,6 +116,13 @@
 	                            		   $scope.cartTotalCost = etalage.getTotalCost();
 	                            		   $scope.carttotalItems = etalage.getTotalItems();
 	                            		   $scope.isCartIdAvail = false;
+	                            		   $scope.productList = [$scope.productItem];
+	                            		   if ($scope.productList[0].quantity != undefined) {
+	                            			   $scope.productList[0].quantity = undefined;
+	                            		   }
+	                            		   if ($scope.productList[0].selectSize != undefined) {
+	                            			   $scope.productList[0].selectSize = "";
+	                            		   }
 	                            	   };
 
 	                            	   $scope.isSizeSelectValue = "";

@@ -92,7 +92,7 @@
 					var cartIdsLength = $scope.cartIds.length;
 					var len = $scope.cartList.length; 
 					for (var i =0 ; i < len; i++) {
-						if ($scope.cartList[i].pid = item.pid) {
+						if ($scope.cartList[i].hash == item.hash) {
 							//remove 1 element from index i;
 							$scope.cartList.splice(i, 1);
 							$scope.cartListLength = $scope.cartList.length; 
